@@ -25,3 +25,12 @@ GOG Games/
 		gameinfo
 ```
 Where \* is the wildcard character.
+
+## TO DO
+0) Enhance the UI if I really want to do all of this...
+
+1) Add notifications (ez)
+2) Add an icon rescaling utility
+3) Add Wine prefix support 
+4) Add an overlay (yes, the one like steam or gog. Got an idea for that, so why not ? =D )
+5) Add a game addition utility (bunch of code to edit then)
