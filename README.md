@@ -15,7 +15,7 @@ Formally, the required libs are :
 
 ## Usage
 Two notes about the usage :
-- It needs the config file on the same folder than the python script. This config file is just the path to the "GOG Games" folder (by default, ~/[your_username]/Gog Games, see the file) *followed by another line.* The content of this line doesn't matter, but there needs to be a second line after the "Gog folder" one.
+- It needs the config file on the same folder than the python script. This config file is just the path to the "GOG Games" folder (by default, ~/[your_username]/Gog Games, see the file)
 - The game folder structure has to look like this :
 ```
 GOG Games/
@@ -29,8 +29,7 @@ Where \* is the wildcard character.
 ## TO DO
 0) Enhance the UI if I really want to do all of this...
 
-1) Add notifications (ez)
+1) Add a game addition utility (bunch of code to edit then)
 2) Add an icon rescaling utility
 3) Add Wine prefix support 
 4) Add an overlay (yes, the one like steam or gog. Got an idea for that, so why not ? =D )
-5) Add a game addition utility (bunch of code to edit then)
