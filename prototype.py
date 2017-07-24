@@ -4,8 +4,9 @@
 import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('Notify', '0.7')
-from gi.repository import Gtk, Notify
-import subprocess, os, fnmatch
+from gi.repository import Gtk, GdkPixbuf, Notify
+import subprocess, os, fnmatch, numpy
+from PIL import Image
 
 Notify.init("Game Launcher")
 
@@ -33,9 +34,12 @@ def create_lib(flowbox,gameFolderRoot):
 		path=gameFolderRoot+gameName
 		gamePaths[index]=path
 		
-		#Generate the application "button"
+		# Generate the application "button"
 		box=Gtk.Box(orientation=1)
-		icon=Gtk.Image.new_from_file(find(path, "icon*")[0])
+		
+		# Triggers the rescaling utility
+		iconPixbuf=GdkPixbuf.Pixbuf.new_from_file_at_size(path+"/support/icon.png", 64, 64)
+		icon=Gtk.Image.new_from_pixbuf(iconPixbuf)
 		title=Gtk.Label(gameName)
 		box.add(icon)
 		box.add(title)
