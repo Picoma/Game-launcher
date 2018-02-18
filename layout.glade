@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.0 -->
+<!-- Generated with glade 3.20.2 -->
 <interface>
-  <requires lib="gtk+" version="3.20"/>
+  <requires lib="gtk+" version="3.18"/>
   <object class="GtkWindow" id="newShortcutWindow">
     <property name="can_focus">False</property>
     <signal name="delete-event" handler="onDeletenewShortcutWindow" swapped="no"/>
@@ -286,9 +286,15 @@
         </child>
       </object>
     </child>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
   </object>
   <object class="GtkWindow" id="window">
     <property name="can_focus">False</property>
+    <property name="window_position">center</property>
+    <property name="default_width">1600</property>
+    <property name="default_height">800</property>
     <signal name="destroy" handler="onDeleteMainWindow" swapped="no"/>
     <child>
       <object class="GtkBox">
@@ -300,12 +306,28 @@
         <property name="margin_bottom">10</property>
         <property name="spacing">10</property>
         <child>
-          <object class="GtkFlowBox" id="flowbox">
+          <object class="GtkScrolledWindow">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="valign">start</property>
-            <property name="homogeneous">True</property>
-            <property name="max_children_per_line">4</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">never</property>
+            <property name="shadow_type">in</property>
+            <property name="propagate_natural_width">True</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkFlowBox" id="flowbox">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="valign">start</property>
+                    <property name="homogeneous">True</property>
+                    <property name="min_children_per_line">4</property>
+                    <property name="max_children_per_line">8</property>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -577,6 +599,9 @@
           </packing>
         </child>
       </object>
+    </child>
+    <child type="titlebar">
+      <placeholder/>
     </child>
   </object>
 </interface>

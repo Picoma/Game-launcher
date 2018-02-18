@@ -5,8 +5,7 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('Notify', '0.7')
 from gi.repository import Gtk, GdkPixbuf, Notify
-import subprocess, os, fnmatch, numpy
-from PIL import Image
+import subprocess, os, fnmatch
 
 Notify.init("Game Launcher")
 
@@ -41,6 +40,9 @@ def create_lib(flowbox,gameFolderRoot):
 		iconPixbuf=GdkPixbuf.Pixbuf.new_from_file_at_size(path+"/support/icon.png", 64, 64)
 		icon=Gtk.Image.new_from_pixbuf(iconPixbuf)
 		title=Gtk.Label(gameName)
+		title.set_line_wrap(True)
+		title.set_max_width_chars(20)
+		title.set_justify(2)
 		box.add(icon)
 		box.add(title)
 		flowbox.add(box)
